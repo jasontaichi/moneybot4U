@@ -44,9 +44,8 @@ def handle_message(event):
     nowValue = stockdata['info']['name']+('\n')+stockdata['realtime']['latest_trade_price']
     addtionalMsg = 'How are you'
     #傳回Line平台
-    #line_bot_api.reply_message(event.reply_token, TextSendMessage(text=nowValue + addtionalMsg))
-    line_bot_api.reply_message(event.reply_token, TextSendMessage(text=addtionalMsg))
-
+    line_bot_api.reply_message(event.reply_token, TextSendMessage(text=nowValue + addtionalMsg))
+    
  
 import os
 if __name__ == "__main__":
