@@ -42,8 +42,9 @@ def handle_message(event):
     stockdata = twstock.realtime.get(event.message.text)
     #擷取realtime資訊中的股票"資訊""名稱"及"即時""股價"
     nowValue = stockdata['info']['name']+('\n')+stockdata['realtime']['latest_trade_price']
+    addtionalMsg = 'How are you'
     #傳回Line平台
-    line_bot_api.reply_message(event.reply_token, TextSendMessage(text=nowValue))
+    line_bot_api.reply_message(event.reply_token, TextSendMessage(text=nowValue + addtionalMsg))
 
  
 import os
